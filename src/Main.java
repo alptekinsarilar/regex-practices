@@ -5,7 +5,16 @@ import java.util.regex.Pattern;
 public class Main {
     public static void main(String[] args) {
         //printMatchingWords("fooa*bar", "src/regex01.txt", true);
-        printMatchingWords("foo.bar", "src/regex02.txt", true);
+        //printMatchingWords("foo.bar", "src/regex02.txt", true);
+        //printMatchingWords("foo.*bar", "src/regex03.txt", true);
+        //printMatchingWords("foo\\s*bar", "src/regex04.txt", true);
+        //printMatchingWords("[fcl]oo", "src/regex05.txt", true);
+        //printMatchingWords("[fcdlpb]oo", "src/regex06.txt", true);
+        //printMatchingWords("[^mh]oo", "src/regex07.txt", true);
+        //printMatchingWords("[j-m]oo", "src/regex08.txt", true);
+        //printMatchingWords("[j-mz]oo", "src/regex09.txt", true);
+        //printMatchingWords("[j-mJ-Mz]oo", "src/regex10.txt", true);
+        printMatchingWords("x*\\.y*", "src/regex11.txt", true);
     }
 
     private static void printMatchingWords(String regex, String fileName, boolean printAll) {
