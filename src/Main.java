@@ -14,7 +14,10 @@ public class Main {
         //printMatchingWords("[j-m]oo", "src/regex08.txt", true);
         //printMatchingWords("[j-mz]oo", "src/regex09.txt", true);
         //printMatchingWords("[j-mJ-Mz]oo", "src/regex10.txt", true);
-        printMatchingWords("x*\\.y*", "src/regex11.txt", true);
+        //printMatchingWords("x*\\.y*", "src/regex11.txt", true);
+        //printMatchingWords("x*[#:.]y*", "src/regex12.txt", true);
+        //printMatchingWords("x*[#:\\^]y*", "src/regex13.txt", true);
+        printMatchingWords("x*[#\\\\\\^]y*", "src/regex14.txt", true);
     }
 
     private static void printMatchingWords(String regex, String fileName, boolean printAll) {
