@@ -21,7 +21,13 @@ public class Main {
         //printMatchingWords("^foo.*", "src/regex15.txt", true);
         //printMatchingWords(".*bar$", "src/regex16.txt", true);
         //printMatchingWords("^foo$", "src/regex17.txt", true);
-        printMatchingWords("^[0-9]{3}$", "src/regex18.txt", true);
+        //printMatchingWords("^[0-9]{3}$", "src/regex18.txt", true);
+        //printMatchingWords("^[a-z]{4,6}$", "src/regex19.txt", true);
+        //printMatchingWords("^(ha){4,}$", "src/regex20.txt", true);
+        //printMatchingWords("^(ha){1,2}$", "src/regex21.txt", true);
+        //printMatchingWords("^fooa+bar$", "src/regex22.txt", true);
+        //printMatchingWords("^https?://website$", "src/regex23.txt", true);
+        printMatchingWords("^(log|ply)wood$", "src/regex24.txt", true);
     }
 
     private static void printMatchingWords(String regex, String fileName, boolean printAll) {
