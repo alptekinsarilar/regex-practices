@@ -17,7 +17,11 @@ public class Main {
         //printMatchingWords("x*\\.y*", "src/regex11.txt", true);
         //printMatchingWords("x*[#:.]y*", "src/regex12.txt", true);
         //printMatchingWords("x*[#:\\^]y*", "src/regex13.txt", true);
-        printMatchingWords("x*[#\\\\\\^]y*", "src/regex14.txt", true);
+        //printMatchingWords("x*[#\\\\\\^]y*", "src/regex14.txt", true);
+        //printMatchingWords("^foo.*", "src/regex15.txt", true);
+        //printMatchingWords(".*bar$", "src/regex16.txt", true);
+        //printMatchingWords("^foo$", "src/regex17.txt", true);
+        printMatchingWords("^[0-9]{3}$", "src/regex18.txt", true);
     }
 
     private static void printMatchingWords(String regex, String fileName, boolean printAll) {
