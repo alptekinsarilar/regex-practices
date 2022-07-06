@@ -27,7 +27,8 @@ public class Main {
         //printMatchingWords("^(ha){1,2}$", "src/regex21.txt", true);
         //printMatchingWords("^fooa+bar$", "src/regex22.txt", true);
         //printMatchingWords("^https?://website$", "src/regex23.txt", true);
-        printMatchingWords("^(log|ply)wood$", "src/regex24.txt", true);
+        //printMatchingWords("^(log|ply)wood$", "src/regex24.txt", true);
+        findAndPrintWithReplacedOnes("([0-9]+)x([0-9]+)", "src/regex25.txt", true);
     }
 
     private static void printMatchingWords(String regex, String fileName, boolean printAll) {
@@ -37,11 +38,12 @@ public class Main {
         try {
             FileReader fr = new FileReader(fileName);
             BufferedReader bf = new BufferedReader(fr);
+            Pattern pattern = Pattern.compile(regex);
+            Matcher matcher;
             String word;
             int lineNumber = 1;
             while ((word = bf.readLine()) != null) {
-                Pattern pattern = Pattern.compile(regex);
-                Matcher matcher = pattern.matcher(word);
+                matcher = pattern.matcher(word);
                 if(matcher.find()) {
                     System.out.println("Line " + lineNumber + ": " + word);
                 }
@@ -63,6 +65,28 @@ public class Main {
             }
             System.out.println();
             bf.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static void findAndPrintWithReplacedOnes(
+            String searchPattern,String fileName, boolean printBefore) {
+        if (printBefore) {
+            printAllWords(fileName);
+        }
+        try {
+            BufferedReader br = new BufferedReader(new FileReader(fileName));
+            Pattern p = Pattern.compile(searchPattern);
+            Matcher matcher;
+            String line;
+            while((line = br.readLine()) != null) {
+                matcher = p.matcher(line);
+                if (matcher.find()) {
+                    line = matcher.replaceAll(matcher.group(1) + " pixel by " + matcher.group(2) + " pixel");
+                    System.out.println(line);
+                }
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }
