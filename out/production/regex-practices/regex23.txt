@@ -1,5 +1,0 @@
-https://website
-http://website
-httpss://website
-httpx://website
-httpxx://website
